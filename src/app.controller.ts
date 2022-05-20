@@ -7,12 +7,12 @@ export class AppController {
   constructor(
     private readonly appService: AppService,
     private readonly crawlerService: CrawlerService,
-  ) {}
+  ) {
+    this.crawlerService.test();
+  }
 
   @Get()
   getHello(): string {
-    this.crawlerService.test();
-
     return this.appService.getHello();
   }
 }
